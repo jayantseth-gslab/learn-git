@@ -37,3 +37,7 @@ git reset <commit-id or ref> ( commit id or ref of the changes after which your 
 # to trash your commmit changes
 
 git revert <commit-id or ref> ( commit id of the changes you want to trash)
+```
+
+## To see changes of a specific commit
+`git show <commit-id>`
