@@ -34,6 +34,9 @@ git commit -m "message"
 
 git reset <commit-id or ref> ( commit id or ref of the changes after which your new commit changes came)
 
+# git reset works with file name as well, if you want to move a file from staged area to unstaged area
+git reset <file-name>
+
 # to trash your commmit changes
 
 git revert <commit-id or ref> ( commit id of the changes you want to trash)
@@ -41,3 +44,6 @@ git revert <commit-id or ref> ( commit id of the changes you want to trash)
 
 ## To see changes of a specific commit
 `git show <commit-id>`
+
+## To undo an unstaged change
+`git checkout <file-name>`

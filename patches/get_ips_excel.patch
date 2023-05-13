@@ -1,0 +1,16 @@
+diff --git a/excel_util.py b/excel_util.py
+index aa9f37d..e2e6ae1 100644
+--- a/excel_util.py
++++ b/excel_util.py
+@@ -1,4 +1,10 @@
+-from openpyxl import Workbook 
++from openpyxl import Workbook, load_workbook
+ 
+ 
+ # Method to read from excel
++def get_ips():
++    wb = load_workbook("details.xlsx")
++    sheet = wb.active
++    row_count = sheet.max_row
++    ips = [sheet['A' + i].value for i in range(2, row_count)]
++    return ips
