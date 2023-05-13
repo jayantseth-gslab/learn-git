@@ -23,3 +23,17 @@ git add 'directory-name'
 
 `git rm --cached file3.txt`
 
+## Commit, Revert, Reset
+
+```
+# to commit
+
+git commit -m "message"
+
+# to uncommit & and get your changes in unstagged area
+
+git reset <commit-id or ref> ( commit id or ref of the changes after which your new commit changes came)
+
+# to trash your commmit changes
+
+git revert <commit-id or ref> ( commit id of the changes you want to trash)
