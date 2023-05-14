@@ -26,33 +26,44 @@ pip install -r requirements.txt
 4. Git push to remote
 `git push origin optimize-ping`
 
-## Branch creation, Branch Merge, Conflict Resolution
+### Branch creation, Branch Merge, Conflict Resolution
 1. Create a feature branch for reading data from excel
 `git checkout -b feature-read-excel`
 2. Apply `get_ips_excel.patch`
-`git apply patches/get_ips_excel.patch`
+
+    `git apply patches/get_ips_excel.patch`
+
 3. Add and commit the changes
-`git add excel_util.py && git commit -m "added excel read method"`
+
+    `git add excel_util.py && git commit -m "added excel read method"`
 4. Checkout to master branch
-`git checkout master` or `git switch master`
+
+    `git checkout master` or `git switch master`
 
 5. Create a feature branch for writing data to excel
-`git checkout -b feature-write-excel`
+
+    `git checkout -b feature-write-excel`
 6. Apply `write_data_excel.patch`
-`git apply patches/write_data_excel.patch`
+
+    `git apply patches/write_data_excel.patch`
+
 7. Add and commit the changes
-`git add excel_util.py && git commit -m "added method to write data to excel"`
+
+    `git add excel_util.py && git commit -m "added method to write data to excel"`
 
 Merging the changes from two branches
 
 8. Switch to master branch
-`git checkout master` or `git switch master`
+
+    `git checkout master` or `git switch master`
 
 9. Merge `feature-read-excel` branch
-`git merge feature-read-excel`
+
+    `git merge feature-read-excel`
 
 10. Merge `feature-write-excel` branch
-`git merge feature-write-excel`
+
+    `git merge feature-write-excel`
 
 There will be conflict as both branches did the changes in the same file, resolve them manually or use vscode for the same
 
