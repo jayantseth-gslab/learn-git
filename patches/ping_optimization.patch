@@ -1,0 +1,43 @@
+diff --git a/ping.py b/ping.py
+index f20b4f1..cfda4fb 100644
+--- a/ping.py
++++ b/ping.py
+@@ -1,4 +1,8 @@
+ import subprocess
++import threading
++import time 
++
++results = {}
+ 
+ def ping(ip):
+     """
+@@ -9,17 +13,23 @@ def ping(ip):
+     # We will check if the output contains the string '0% packet loss' or not
+     output_list = output.split("0%\ packet\ loss")
+     if len(output_list) > 1:
++        results[ip] = "UP"
+         return "UP"
+     else:
++        results[ip] = "DOWN"
+         return "DOWN"
+-    
++
+ 
+ def ping_all(ips):
+     """
+     pings all ips and returns a dictionary
+     """
+-    results = {}
++    threads = []
+     for ip in ips:
+-        result = ping(ip)
+-        results[ip] = result
+-    return results
+\ No newline at end of file
++        thread = threading.Thread(target=ping, args=(ip,))
++        threads.append(thread)
++        thread.start()
++        time.sleep(.2)
++    for thread in threads:
++        thread.join()
++    return results
