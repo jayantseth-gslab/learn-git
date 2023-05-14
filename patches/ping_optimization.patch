@@ -13,7 +13,7 @@ index f20b4f1..cfda4fb 100644
      """
 @@ -9,17 +13,23 @@ def ping(ip):
      # We will check if the output contains the string '0% packet loss' or not
-     output_list = output.split("0%\ packet\ loss")
+     output_list = output.split(" 0% packet loss")
      if len(output_list) > 1:
 +        results[ip] = "UP"
          return "UP"
