@@ -14,3 +14,13 @@ To Start with, please download/clone this repo, it has some initial files to sta
 ```
 pip install -r requirements.txt
 ```
+
+## Follow below steps to complete the tutorial
+
+
+1. Create a feature branch for reading data from excel
+`git checkout -b feature-read-excel`
+2. Apply `get_ips_excel.patch`
+`git apply patches/get_ips_excel.patch`
+3. Add and commit the changes
+`git commit -a 
