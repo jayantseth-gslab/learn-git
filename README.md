@@ -17,14 +17,6 @@ pip install -r requirements.txt
 
 ## Follow below steps to complete the tutorial
 
-1. Create a feature branch for optimization of ping module
-`git checkout -b optimize-ping`
-2. Apply `ping_optimization.patch`
-`git apply patches/ping_optimization.patch`
-3. Add & commit the changes
-`git add ping.py && git commit -m "optimized ping"`
-4. Git push to remote
-`git push origin optimize-ping`
 
 ### Branch creation, Branch Merge, Conflict Resolution
 1. Create a feature branch for reading data from excel
