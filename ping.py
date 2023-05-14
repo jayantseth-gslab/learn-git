@@ -12,3 +12,14 @@ def ping(ip):
         return "UP"
     else:
         return "DOWN"
+    
+
+def ping_all(ips):
+    """
+    pings all ips and returns a dictionary
+    """
+    results = {}
+    for ip in ips:
+        result = ping(ip)
+        results[ip] = result
+    return results
