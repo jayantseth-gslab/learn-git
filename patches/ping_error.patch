@@ -5,7 +5,7 @@ index f20b4f1..5597cbc 100644
 @@ -8,7 +8,7 @@ def ping(ip):
      output = resp.stdout.read().decode("utf-8")
      # We will check if the output contains the string '0% packet loss' or not
-     output_list = output.split("0%\ packet\ loss")
+     output_list = output.split(packet_loss_string)
 -    if len(output_list) > 1:
 +    if len(output_list) == 1:
          return "UP"

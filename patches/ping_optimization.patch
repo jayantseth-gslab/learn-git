@@ -1,19 +1,21 @@
 diff --git a/ping.py b/ping.py
-index f20b4f1..cfda4fb 100644
+index bacabea..8361701 100644
 --- a/ping.py
 +++ b/ping.py
-@@ -1,4 +1,8 @@
- import subprocess
+@@ -1,5 +1,9 @@
+-import subprocess
+ import platform
++import subprocess
 +import threading
-+import time 
++import time
 +
 +results = {}
  
  def ping(ip):
      """
-@@ -9,17 +13,23 @@ def ping(ip):
+@@ -18,17 +22,23 @@ def ping(ip):
      # We will check if the output contains the string '0% packet loss' or not
-     output_list = output.split(" 0% packet loss")
+     output_list = output.split(packet_loss_string)
      if len(output_list) > 1:
 +        results[ip] = "UP"
          return "UP"
