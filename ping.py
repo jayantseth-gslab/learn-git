@@ -9,7 +9,7 @@ def ping(ip):
     packet_loss_string = ""
     if (platform.system() == "Windows"):
         ping_list = ["ping", ip, "-n", "5"]
-        packet_loss_string = "0% loss"
+        packet_loss_string = "(0% loss"
     else:
         ping_list = ["ping", ip, "-c", "5"]
         packet_loss_string = " 0% packet loss"
