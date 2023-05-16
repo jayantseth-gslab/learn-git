@@ -34,6 +34,7 @@ git commit -m "message"
 
 git reset <commit-id or ref> ( commit id or ref of the changes after which your new commit changes came)
 
+
 # git reset works with file name as well, if you want to move a file from staged area to unstaged area
 git reset <file-name>
       or
