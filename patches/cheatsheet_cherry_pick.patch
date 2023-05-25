@@ -1,0 +1,15 @@
+diff --git a/cheatsheet.md b/cheatsheet.md
+index 376589f..8b01625 100644
+--- a/cheatsheet.md
++++ b/cheatsheet.md
+@@ -60,4 +60,10 @@ git restore --source <commit-id where original changes were present> <file-name>
+ `git cherry-pick <commit-id of the branch from where your want to pull changes>`
+ 
+ 
++## To Delete a branch locally
+ 
++### When Branch is merged
++`git branch -d <branch-name>`
++
++### When the branch is not yet merged but you still want to delete it
++`git branch -D <branch-name>`
