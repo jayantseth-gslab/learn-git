@@ -60,4 +60,12 @@ git restore --source <commit-id where original changes were present> <file-name>
 `git cherry-pick <commit-id of the branch from where your want to pull changes>`
 
 
+## To apply a patch
+
+`git apply <patch-file-path>`
+
+## To apply a patch with whitespace changes ( whitespace errors)
+
+`git apply --ignore-space-change --ignore-whitespace <patch-file-path>`
+
 
