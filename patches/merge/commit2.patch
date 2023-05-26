@@ -1,0 +1,11 @@
+diff --git a/cheatsheet.md b/cheatsheet.md
+index 430e2a6..1169262 100644
+--- a/cheatsheet.md
++++ b/cheatsheet.md
+@@ -62,3 +62,6 @@ git restore --source <commit-id where original changes were present> <file-name>
+ ## To Delete a Merged Branch
+ `git branch -d <branch-name>`
+ 
++## To Delete an unmerged branch
++`git branch -D <branch-name>`
++
