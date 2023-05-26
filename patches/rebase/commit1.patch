@@ -1,0 +1,13 @@
+diff --git a/.gitignore b/.gitignore
+index 59ac14c..160e0ec 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -1,4 +1,5 @@
+ __pycache__
+ /.venv/
+ result.xlsx
+-/env/
+\ No newline at end of file
++/env/
++.exe
+\ No newline at end of file
