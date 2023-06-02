@@ -1,5 +1,9 @@
-import subprocess
 import platform
+import subprocess
+import threading
+import time
+
+results = {}
 
 def ping(ip):
     """
@@ -18,17 +22,23 @@ def ping(ip):
     # We will check if the output contains the string '0% packet loss' or not
     output_list = output.split(packet_loss_string)
     if len(output_list) > 1:
+        results[ip] = "UP"
         return "UP"
     else:
+        results[ip] = "DOWN"
         return "DOWN"
-    
+
 
 def ping_all(ips):
     """
     pings all ips and returns a dictionary
     """
-    results = {}
+    threads = []
     for ip in ips:
-        result = ping(ip)
-        results[ip] = result
+        thread = threading.Thread(target=ping, args=(ip,))
+        threads.append(thread)
+        thread.start()
+        time.sleep(.2)
+    for thread in threads:
+        thread.join()
     return results
